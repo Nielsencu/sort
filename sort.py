@@ -249,8 +249,8 @@ class Sort(object):
         if(trk.time_since_update > self.max_age):
           self.trackers.pop(i)
     if(len(ret)>0):
-      return np.concatenate(ret)
-    return np.empty((0,5))
+      return np.concatenate(ret), matched, unmatched_dets
+    return np.empty((0,5)), matched, unmatched_dets
 
 def parse_args():
     """Parse input arguments."""
